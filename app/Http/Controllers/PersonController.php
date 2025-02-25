@@ -10,7 +10,8 @@ class PersonController extends Controller
 {
     public function index()
     {
-        $persons = Person::all()->toTree();
+        $persons = Person::with('spouses')->get()->toTree();
+//        dd($persons->toArray());
         return Inertia::render('Persons/Index', ['persons' => $persons]);
     }
 

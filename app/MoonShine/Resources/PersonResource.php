@@ -77,8 +77,8 @@ class PersonResource extends ModelResource
                 Number::make('Год смерти', 'death_year')->min(1700)->max(2100),
                 Text::make('Описание', 'description'),
                 Image::make('Изображение', 'image_path')->dir('images')->removable()->nullable(),
-//                HasMany::make('Супруг(а)', 'spouses')->searchable(false),
-                RelationRepeater::make('Супруг(а)', 'spouses')->vertical()->removable()->nullable(),
+                HasMany::make('Супруг(а)', 'spouses')->searchable(false),
+//                RelationRepeater::make('Супруг(а)', 'spouses')->vertical()->removable()->nullable(),
             ])
         ];
     }
